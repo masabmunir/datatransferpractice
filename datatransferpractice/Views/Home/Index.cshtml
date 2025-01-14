@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Employee>     // Data Transfer using Strongly Typed Views
+@{
+    ViewData["Title"] = "Home Page";
+    // var emp = ViewData["Data1"] as List<Employee>;
+    // var emp = ViewBag.Data1;
+
+}
+
+<a asp-controller="Home" asp-action="Contact" >Contact Page</a> @*  Tag Helper in ASP.Ne *@ 
+
+<a asp-controller="Home" asp-action="Signup">Sign up form</a>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@{
+    if(Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <h2>@item.employeeId</h2>
+            <h2>@item.employeeName</h2>
+            <h2>@item.employeeTitle</h2>
+        }
+
+    }
+
+    else
+    {
+        <p>No Records</p>
+    }
+}

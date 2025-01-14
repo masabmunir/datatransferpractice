@@ -1,0 +1,63 @@
+﻿@model datatransferpractice.Models.Student
+@{
+    ViewData["Title"] = "Signup";
+}
+
+<div class="container">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-sm-4">
+            <form class="d-grid" method="post">
+                <input asp-for="Id" placeholder="Enter Student ID" class="form-control" /><br />
+                <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()">
+                    <option value="">Select Gender</option>
+                </select><br />
+                <span asp-validation-for="Gender" class="text-danger"></span><br />
+
+                <input asp-for="firstName" placeholder="Enter First Name" class="form-control" /><br />
+                <span asp-validation-for="firstName" class="text-danger"></span><br />
+
+                <input asp-for="lastName" placeholder="Enter Last Name" class="form-control" /><br />
+                <input asp-for="Address" placeholder="Enter Address" class="form-control" /><br />
+                <span asp-validation-for="Address" class="text-danger"></span><br />
+
+                 <label>Married Status</label><br />
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="IsMarried" value="true">
+                <label class="form-check-label" for="flexCheckDefault">
+                Yes
+                </label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="IsMarried" value="false">
+                <label class="form-check-label" for="flexCheckChecked">
+                No
+                </label>
+                </div><br />
+
+                <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@* <label>Married Status</label><br />
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" asp-for="IsMarried" value="Yes">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" asp-for="IsMarried" value="No">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        No
+                    </label>
+                </div> *@
