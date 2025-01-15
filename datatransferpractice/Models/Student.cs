@@ -7,7 +7,8 @@ namespace datatransferpractice.Models
         public int Id { get; set; }
         [Required(ErrorMessage = "Gender is required.")]
         public Gender Gender { get; set; }
-        [Required(ErrorMessage ="FirstName is Required")]
+        [Required]
+        [RegularExpression(@"^[a-zA-Z0-9]*$", ErrorMessage = "Only alphanumeric characters are allowed.")]
         public string firstName { get; set; }
         public string lastName { get; set; }
 
