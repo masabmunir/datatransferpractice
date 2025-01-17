@@ -12,5 +12,6 @@ namespace datatransferpractice.Models
         [Column ("TeacherGender", TypeName = "varchar(20)")]
         public string Gender { get; set; }
         public int Age { get; set; }
+        public int Standard { get; set; }
     }
 }

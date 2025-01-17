@@ -6,11 +6,25 @@ namespace datatransferpractice.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly TeacherDBContext teacherDB;
 
-        public HomeController(ILogger<HomeController> logger)
+        //private readonly ILogger<HomeController> _logger;
+
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
+
+        public HomeController(TeacherDBContext teacherDB)
         {
-            _logger = logger;
+            this.teacherDB = teacherDB;
+        }
+
+        public IActionResult TeacherDetail()
+        {
+            var teacher = teacherDB.Teachers.ToList(); // used to access data from database
+            return View(teacher);
+
         }
 
         public IActionResult Index()
@@ -27,11 +41,6 @@ namespace datatransferpractice.Controllers
         }
 
         public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult Contact()
         {
             return View();
         }

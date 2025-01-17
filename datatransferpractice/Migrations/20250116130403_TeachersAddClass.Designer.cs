@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using datatransferpractice.Models;
 
@@ -10,9 +11,11 @@ using datatransferpractice.Models;
 namespace datatransferpractice.Migrations
 {
     [DbContext(typeof(TeacherDBContext))]
-    partial class TeacherDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250116130403_TeachersAddClass")]
+    partial class TeachersAddClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
